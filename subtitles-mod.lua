@@ -685,6 +685,7 @@ languages = {
 	{ title = "French", tag = "fr" },
 	{ title = "German", tag = "de" },
 	{ title = "Greek", tag="el" },
+	{ title = "Hebrew", tag="heb" },
 	{ title = "Italian", tag = "it" },
 	{ title = "Japanese", tag = "ja" },
 	{ title = "Polish", tag = "pl" },
