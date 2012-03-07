@@ -1,1 +1,1 @@
-Notes  - Because of internal changes in VLC, the minimum version of VLC required is now: 1.1.0 git - 2010-03-21  - VLC support only uncompressed .rar filesKnow issues  - The search fail if you click the button two times consecutively
+Notes  - Because of internal changes in VLC, the minimum version of VLC required is 1.1.0  - VLC support only uncompressed .rar files  - VLC 1.1.x do not support lua scripts that uses GUIs under MAC-OSx, so:    this plugin WILL NOT work on your MAC!Know issues  - The search fail if you click the button two times consecutively
