@@ -4,7 +4,7 @@
  Copyright © 2009-2010 VideoLAN and AUTHORS
 
  Authors:
-  - thePanz (Download and save feature)
+  - thePanz (Download-and-save feature, updates, installer script)
   - ale5000 (Based on the script made by Jean-Philippe André)
 
  This program is free software; you can redistribute it and/or modify
@@ -42,7 +42,7 @@ type_text_input = nil
 function descriptor()
 	return {
 				title = "Subtitles Finder";
-				version = "1.04.1";
+				version = "1.1.0";
 				author = "thePanz, ale5000";
 				url = 'http://thepanz.netsons.org/post/vlc-and-opensubtitles-downloader';
 				description = ""
