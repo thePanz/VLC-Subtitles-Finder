@@ -546,8 +546,9 @@ end
 ]]--
 
 -- OpenSubtitles.org
--- This function uses first version of OS API. It will probably fail in
--- the future. We'll need a XML-RPC key btw
+-- This function uses first version of OS API. It will probably fail in the future.
+-- We'll need a XML-RPC key btw
+-- See: http://trac.opensubtitles.org/projects/opensubtitles/wiki/XMLRPC
 function urlOpenSub(search_term,lang)
 	-- base = "http://api.opensubtitles.org/xml-rpc"
 	-- lang = "eng"
@@ -677,10 +678,12 @@ websites = {
 	  parsefunc = parse2 }]]
 }
 
+-- ISO639 lang codes: 
 languages = {
 	{ title = "All", tag = "all" },
-	{ title = "English", tag = "en" },
 	{ title = "Chinese", tag = "zh" },
+	{ title = "Dutch", tag = "nl" },
+	{ title = "English", tag = "en" },
 	{ title = "Finnish", tag = "fi" },
 	{ title = "French", tag = "fr" },
 	{ title = "German", tag = "de" },
