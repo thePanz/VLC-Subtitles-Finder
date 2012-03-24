@@ -11,12 +11,13 @@
 ;General
   
   !define MAIN_NAME "SubtitlesFinder"
-  !define VERSION "1.1.0"
+  !define VERSION "1.x-dev"
   !define REG_UNINSTALL "Software\Microsoft\Windows\CurrentVersion\Uninstall\SubtitlesFinder"
+  !define URL_LUA "https://raw.github.com/thePanz/VLC-Subtitles-Finder/master/SubtitlesFinder.lua"
 
   ;Name and file
-  Name "VLC Subtitles Finder (v. ${VERSION})"
-  OutFile "${MAIN_NAME}-${VERSION}-install.exe"
+  Name "VLC Subtitles Finder"
+  OutFile "${MAIN_NAME}-webinstall.exe"
 
   ;Default installation folder
   InstallDir "$APPDATA\vlc\lua\extensions"
@@ -47,19 +48,42 @@
 ;--------------------------------
 ; Include Functions
 !include "functions.nsh"
+!addPluginDir "."
 
 ;--------------------------------
 ;Installer Sections
 Section "Dummy Section" SecDummy
 
   SetOutPath "$INSTDIR"
-  File SubtitlesFinder.lua
-  Call AddRegistry
+  
+  DetailPrint "Downloading SubtitlesFinder.lua from ${URL_LUA}"
+  
+  ; NSISdl::download do not work with HTTPs urls
+  ; NSISdl::download /TIMEOUT=30000 ${URL_LUA} "$INSTDIR\SubtitlesFinder.lua"
+  inetc::get /NOCANCEL /CONNECTTIMEOUT=30000 ${URL_LUA} "$INSTDIR\SubtitlesFinder.lua"
+
+  Pop $R0
+  
+  StrCmp $R0 OK success
+    SetDetailsView show
+    DetailPrint "Error downloading SubtitlesFinder.lua: $R0"
+    MessageBox MB_OK "Error downloading SubtitlesFinder.lua: $R0"
+    Goto end
+  
+  success:
+    Call AddRegistry
+  
+  end:
+    ; nothing to do here!
+  
 SectionEnd
 
 ;--------------------------------
 ;Uninstaller Section
+
 Section "Uninstall"
+
   Delete "$INSTDIR\SubtitlesFinder.lua"
   Delete "$INSTDIR\SubtitlesFinder-uninstall.exe"
+
 SectionEnd
