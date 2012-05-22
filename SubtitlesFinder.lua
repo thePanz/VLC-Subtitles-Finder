@@ -679,6 +679,7 @@ websites = {
 }
 
 -- ISO639 lang codes: 
+-- For Opensubtitles refer to: http://www.opensubtitles.org/addons/export_languages.php
 languages = {
 	{ title = "All", tag = "all" },
 	{ title = "Chinese", tag = "zh" },
