@@ -12,6 +12,7 @@
   
   !define MAIN_NAME "SubtitlesFinder"
   !define VERSION "1.1.0"
+  !define AUTHOR "ThePanz"
   !define REG_UNINSTALL "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MAIN_NAME}"
 
   ;Name and file
@@ -60,6 +61,6 @@ SectionEnd
 ;--------------------------------
 ;Uninstaller Section
 Section "Uninstall"
-  Delete "$INSTDIR\${MAIN_NAME}.lua"
+  Delete "$INSTDIR\SubtitlesFinder.lua"
   Delete "$INSTDIR\${MAIN_NAME}-uninstall.exe"
 SectionEnd

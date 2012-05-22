@@ -4,7 +4,7 @@ Function AddRegistry
   
   ;Register uninstaller into Add/Remove panel (for local user only)
   WriteRegStr HKCU "${REG_UNINSTALL}" "DisplayName" "VLC ${MAIN_NAME}"
-  WriteRegStr HKCU "${REG_UNINSTALL}" "Publisher" "ThePanz"
+  WriteRegStr HKCU "${REG_UNINSTALL}" "Publisher" "${AUTHOR}"
   WriteRegStr HKCU "${REG_UNINSTALL}" "DisplayVersion" "${VERSION}"
   WriteRegDWord HKCU "${REG_UNINSTALL}" "EstimatedSize" 21 ;KB
   ; WriteRegStr HKCU "${REG_UNINSTALL}" "HelpLink" "${WEBSITE_LINK}"

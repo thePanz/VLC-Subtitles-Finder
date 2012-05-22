@@ -12,6 +12,7 @@
   
   !define MAIN_NAME "SubtitlesFinder"
   !define VERSION "1.x-dev"
+  !define AUTHOR "ThePanz"
   !define REG_UNINSTALL "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MAIN_NAME}"
   !define URL_LUA "https://raw.github.com/thePanz/VLC-Subtitles-Finder/master/SubtitlesFinder.lua"
 
