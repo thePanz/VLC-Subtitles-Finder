@@ -12,7 +12,7 @@
   
   !define MAIN_NAME "SubtitlesFinder"
   !define VERSION "1.x-dev"
-  !define REG_UNINSTALL "Software\Microsoft\Windows\CurrentVersion\Uninstall\SubtitlesFinder"
+  !define REG_UNINSTALL "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MAIN_NAME}"
   !define URL_LUA "https://raw.github.com/thePanz/VLC-Subtitles-Finder/master/SubtitlesFinder.lua"
 
   ;Name and file
@@ -84,6 +84,6 @@ SectionEnd
 Section "Uninstall"
 
   Delete "$INSTDIR\SubtitlesFinder.lua"
-  Delete "$INSTDIR\SubtitlesFinder-uninstall.exe"
+  Delete "$INSTDIR\${MAIN_NAME}-uninstall.exe"
 
 SectionEnd

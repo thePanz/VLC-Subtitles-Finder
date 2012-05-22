@@ -3,7 +3,7 @@ Function AddRegistry
   WriteUninstaller "$INSTDIR\${MAIN_NAME}-uninstall.exe"
   
   ;Register uninstaller into Add/Remove panel (for local user only)
-  WriteRegStr HKCU "${REG_UNINSTALL}" "DisplayName" "VLC SubtitlesFinder"
+  WriteRegStr HKCU "${REG_UNINSTALL}" "DisplayName" "VLC ${MAIN_NAME}"
   WriteRegStr HKCU "${REG_UNINSTALL}" "Publisher" "ThePanz"
   WriteRegStr HKCU "${REG_UNINSTALL}" "DisplayVersion" "${VERSION}"
   WriteRegDWord HKCU "${REG_UNINSTALL}" "EstimatedSize" 21 ;KB
@@ -14,5 +14,5 @@ Function AddRegistry
   WriteRegDWord HKCU "${REG_UNINSTALL}" "NoModify" 1
   WriteRegDWord HKCU "${REG_UNINSTALL}" "NoRepair" 1
   WriteRegStr HKCU "${REG_UNINSTALL}" "UninstallString" "$\"$INSTDIR\${MAIN_NAME}-uninstall.exe$\""
-  WriteRegStr HKCU "${REG_UNINSTALL}" "Comments" "Uninstalls VLC SubtitlesFinder plugin."  
+  WriteRegStr HKCU "${REG_UNINSTALL}" "Comments" "Uninstall VLC ${MAIN_NAME} plugin."  
 FunctionEnd
