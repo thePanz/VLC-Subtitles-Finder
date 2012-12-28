@@ -690,6 +690,7 @@ languages = {
 	{ title = "German", tag = "de" },
 	{ title = "Greek", tag="el" },
 	{ title = "Hebrew", tag="heb" },
+	{ title = "Hungarian", tag="hu" },
 	{ title = "Italian", tag = "it" },
 	{ title = "Japanese", tag = "ja" },
 	{ title = "Polish", tag = "pl" },
