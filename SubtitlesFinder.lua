@@ -683,6 +683,7 @@ websites = {
 languages = {
 	{ title = "All", tag = "all" },
 	{ title = "Chinese", tag = "zh" },
+	{ title = "Croatian", tag = "hr" },
 	{ title = "Dutch", tag = "nl" },
 	{ title = "English", tag = "en" },
 	{ title = "Finnish", tag = "fi" },
