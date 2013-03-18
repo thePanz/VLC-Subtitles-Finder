@@ -696,7 +696,7 @@ languages = {
 	{ title = "Japanese", tag = "ja" },
 	{ title = "Polish", tag = "pl" },
 	{ title = "Portuguese", tag = "pt" },
-	{ title = "Romanian", tag = "ron" },
+	{ title = "Romanian", tag = "rum" },
 	{ title = "Russian", tag = "ru" },
 	{ title = "Spanish", tag = "es" }
 }
