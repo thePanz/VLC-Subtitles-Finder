@@ -682,10 +682,12 @@ websites = {
 -- For Opensubtitles refer to: http://www.opensubtitles.org/addons/export_languages.php
 languages = {
 	{ title = "All", tag = "all" },
+	{ title = "Brazilian", tag = "pob" },
 	{ title = "Chinese", tag = "zh" },
 	{ title = "Croatian", tag = "hr" },
 	{ title = "Dutch", tag = "nl" },
 	{ title = "English", tag = "en" },
+	{ title = "Estonian", tag = "est" },
 	{ title = "Finnish", tag = "fi" },
 	{ title = "French", tag = "fr" },
 	{ title = "German", tag = "de" },
@@ -698,6 +700,8 @@ languages = {
 	{ title = "Portuguese", tag = "pt" },
 	{ title = "Romanian", tag = "rum" },
 	{ title = "Russian", tag = "ru" },
+	{ title = "Slovenian", tag = "slv" },
+	{ title = "Swedish", tag = "swe" },
 	{ title = "Spanish", tag = "es" }
 }
 
