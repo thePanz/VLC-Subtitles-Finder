@@ -389,6 +389,10 @@ function save_subtitle(url, extension, language)
       local name = item:uri()
       -- vlc.msg.info("NAME: "..name)
       name = vlc.strings.decode_uri(string.gsub(name, "file:///", ""))
+      local winDir = os.getenv("windir")
+      if (winDir == "") or (winDir == nil) then
+          name = "/"..name
+      end
       vlc.msg.info("[Subtitle-download] saving subtitle to: "..name.."."..language.."."..extension)
       local fsout = assert(io.open(name.."."..language.."."..extension, "w"))
       fsout:write(dataBuffer)
