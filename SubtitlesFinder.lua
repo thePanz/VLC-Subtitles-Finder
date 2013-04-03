@@ -150,14 +150,18 @@ function show_dialog_download()
 	-- column, row, colspan, rowspan
 	dlg:add_label("<right><b>Database: </b></right>", 1, 1, 1, 1)
 	website = dlg:add_dropdown(2, 1, 3, 1)
+  
+   dlg:add_label("<b>Search: </b>", 1, 2, 1, 1)
+   main_text_input = dlg:add_text_input("", 2, 2, 3, 1)
 
-	dlg:add_label("<right><b>Language: </b></right>", 1, 2, 1, 1)
-	language = dlg:add_dropdown(2, 2, 3, 1)
+   dlg:add_label("<b>Language: </b>", 1, 3, 1, 1)
+   language = dlg:add_dropdown(2, 3, 1, 1)
 
-	dlg:add_label("<right><b>Search: </b></right>", 1, 3, 1, 1)
-	main_text_input = dlg:add_text_input("", 2, 3, 1, 1)
-	search_button = dlg:add_button("Search", click_search, 3, 3, 1, 1)
-	dlg:add_button("Hide", hide_dialog, 4, 3, 1, 1)
+   search_button = dlg:add_button("Search", click_search, 3, 3, 1, 1)
+   dlg:add_button("Hide", hide_dialog, 4, 3, 1, 1)
+
+   local data = descriptor()
+   info_header = dlg:add_label("<hr /><center>More options are now available in VLC menu: View &gt; " .. data.title .. " &gt; ...<br />More VLC Lua Extensions: <a href='http://addons.videolan.org/index.php?xcontentmode=903'>http://addons.videolan.org</a></center>", 1, 4, 4, 1)
 
 	for idx, ws in ipairs(websites) do
 		website:add_value(ws.title, idx)
@@ -206,9 +210,11 @@ end
 function show_dialog_about()
 	local data = descriptor()
 
-	-- column, row, colspan, rowspan
-	dlg:add_label("<center><b>" .. data.title .. " " .. data.version .. "</b></center>", 1, 1, 1, 1)
-	dlg:add_html(data.description, 1, 2, 1, 1)
+  -- column, row, colspan, rowspan
+  dlg:add_label("<center><b>" .. data.title .. " " .. data.version .. "</b></center>", 1, 1, 1, 1)
+
+  local additional_links="<br /><hr />Home: <a href='http://thepanz.netsons.org/post/vlc-and-opensubtitles-downloader'>VLC and OpenSubtitles downloader</a><br />Forum: <a href='http://forum.videolan.org/viewtopic.php?f=29&t=71535'>[Script] Download subtitles on-the-fly</a><br />Extensions: <a href='http://addons.videolan.org/index.php?xcontentmode=903'>http://addons.videolan.org</a>"
+  dlg:add_html(data.description .. additional_links, 1, 2, 1, 1)
 
 	dlg:update()
 	return true
@@ -299,8 +305,13 @@ function click_search()
 	subtitles_result = ws.parsefunc(xmlpage)
 
 	if subtitles_list == nil then
-		subtitles_list = dlg:add_list(1, 4, 4, 1)
-		load_button = dlg:add_button("Load selected subtitles", click_load_from_search_button, 1, 5, 4, 1)
+   info_header:set_text("<hr />[Language][#Number of subtitles] Name of subtitle package")
+
+   subtitles_list = dlg:add_list(1, 5, 4, 1)
+   load_button = dlg:add_button("Load selected subtitles", click_load_from_search_button, 1, 6, 4, 1)
+
+   save_checkbox = dlg:add_check_box("Save", false, 4, 6, 1, 1)
+   info_footer = dlg:add_label("Then check loaded subtitles in VLC menu: Video > Subtitles Track > ...", 1, 7, 4, 1)
 	end
 
 	if not subtitles_result then
@@ -347,8 +358,9 @@ function load_subtitles_in_the_archive(dataBuffer, language)
 		if(extension == "ass" or extension == "ssa" or extension == "srt" or extension == "smi" or extension == "sub" or extension == "rt" or extension == "txt" or extension == "mpl") then
 			subtitles_found_in_the_compressed_file = subtitles_found_in_the_compressed_file + 1
 			vlc.msg.dbg("[Subtitles] Loading "..language.." subtitle: "..srturl)
-      
-            save_subtitle(srturl, extension, language)
+      if save_checkbox:get_checked() then
+        save_subtitle(srturl, extension, language)
+      end
       
 			vlc.input.add_subtitle(srturl.."."..extension)
 		end
@@ -393,6 +405,12 @@ function save_subtitle(url, extension, language)
       local name = item:uri()
       -- vlc.msg.info("NAME: "..name)
       name = vlc.strings.decode_uri(string.gsub(name, "file:///", ""))
+
+      local winDir = os.getenv("windir")
+      if (winDir == "") or (winDir == nil) then
+        name = "/"..name
+      end
+      
       vlc.msg.info("[Subtitle-download] saving subtitle to: "..name.."."..language.."."..extension)
       local fsout = assert(io.open(name.."."..language.."."..extension, "w"))
       fsout:write(dataBuffer)
@@ -433,6 +451,7 @@ function click_load_from_search_button()
 	vlc.msg.dbg("[Subtitles] Clicked load button from \"Download subtitles\" dialog")
 	if(not vlc.input.is_playing()) then
 		vlc.msg.warn("[Subtitles] You cannot load subtitles if you aren't playing any file")
+    info_footer:set_text("You cannot load subtitles if you aren't playing any file!")
 		return true
 	end
 	local old_button_name = load_button:get_text()
