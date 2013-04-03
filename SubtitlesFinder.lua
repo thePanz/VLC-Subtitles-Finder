@@ -2,10 +2,14 @@
  Subtitles
 
  Copyright © 2009-2010 VideoLAN and AUTHORS
+ 
+ Version: 1.2 [2013-03-03]
 
  Authors:
   - thePanz (Download-and-save feature, updates, installer script)
   - ale5000 (Based on the script made by Jean-Philippe André)
+ Contributors:
+  - Mederi (updated languages, plugin refactor)
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -681,27 +685,68 @@ websites = {
 -- ISO639 lang codes: 
 -- For Opensubtitles refer to: http://www.opensubtitles.org/addons/export_languages.php
 languages = {
-	{ title = "All", tag = "all" },
-	{ title = "Brazilian", tag = "pob" },
-	{ title = "Chinese", tag = "zh" },
-	{ title = "Croatian", tag = "hr" },
-	{ title = "Dutch", tag = "nl" },
-	{ title = "English", tag = "en" },
-	{ title = "Estonian", tag = "est" },
-	{ title = "Finnish", tag = "fi" },
-	{ title = "French", tag = "fr" },
-	{ title = "German", tag = "de" },
-	{ title = "Greek", tag="el" },
-	{ title = "Hebrew", tag="heb" },
-	{ title = "Hungarian", tag="hu" },
-	{ title = "Italian", tag = "it" },
-	{ title = "Japanese", tag = "ja" },
-	{ title = "Polish", tag = "pl" },
-	{ title = "Portuguese", tag = "pt" },
-	{ title = "Romanian", tag = "rum" },
-	{ title = "Russian", tag = "ru" },
-	{ title = "Slovenian", tag = "slv" },
-	{ title = "Swedish", tag = "swe" },
-	{ title = "Spanish", tag = "es" }
+   { title = "-Any Language-", tag = "all" },
+   { title = "Albanian [sq]", tag = "sq" },
+   { title = "Arabic [ar]", tag = "ar" },
+   { title = "Armenian [hy]", tag = "hy" },
+   { title = "Basque [eu]", tag = "eu" },
+   { title = "Bengali [bn]", tag = "bn" },
+   { title = "Bosnian [bs]", tag = "bs" },
+   { title = "Brazilian [pb]", tag = "pb" },
+   { title = "Breton [br]", tag = "br" },
+   { title = "Bulgarian [bg]", tag = "bg" },
+   { title = "Burmese [my]", tag = "my" },
+   { title = "Catalan [ca]", tag = "ca" },
+   { title = "Chinese [zh]", tag = "zh" },
+   { title = "Croation [hr]", tag = "hr" },
+   { title = "Czech [cs]", tag = "cs" },
+   { title = "Danish [da]", tag = "da" },
+   { title = "Dutch [nl]", tag = "nl" },
+   { title = "English [en]", tag = "en" },
+   { title = "Esperanto [eo]", tag = "eo" },
+   { title = "Estonian [et]", tag = "et" },
+   { title = "Finnish [fi]", tag = "fi" },
+   { title = "French [fr]", tag = "fr" },
+   { title = "Galician [gl]", tag = "gl" },
+   { title = "Georgian [ka]", tag = "ka" },
+   { title = "German [de]", tag = "de" },
+   { title = "Greek [el]", tag = "el" },
+   { title = "Hebrew [he]", tag = "he" },
+   { title = "Hindi [hi]", tag = "hi" },
+   { title = "Hungarian [hu]", tag = "hu" },
+   { title = "Icelandic [is]", tag = "is" },
+   { title = "Indonesian [id]", tag = "id" },
+   { title = "Italina [it]", tag = "it" },
+   { title = "Japanese [ja]", tag = "ja" },
+   { title = "Kazakh [kk]", tag = "kk" },
+   { title = "Khmer [km]", tag = "km" },
+   { title = "Korean [ko]", tag = "ko" },
+   { title = "Latvian [lv]", tag = "lv" },
+   { title = "Lithuanian [lt]", tag = "lt" },
+   { title = "Luxembourgish [lb]", tag = "lb" },
+   { title = "Macedonian [mk]", tag = "mk" },
+   { title = "Malay [ms]", tag = "ms" },
+   { title = "Malayalam [ml]", tag = "ml" },
+   { title = "Mongolian [mn]", tag = "mn" },
+   { title = "Norwegian [no]", tag = "no" },
+   { title = "Occitan [oc]", tag = "oc" },
+   { title = "Polish [pl]", tag = "pl" },
+   { title = "Portuguese [pt]", tag = "pt" },
+   { title = "Romanian [ro]", tag = "ro" },
+   { title = "Russian [ru]", tag = "ru" },
+   { title = "Serbian [sr]", tag = "sr" },
+   { title = "Sinhalese [si]", tag = "si" },
+   { title = "Slovak [sk]", tag = "sk" },
+   { title = "Slovenian [sl]", tag = "sl" },
+   { title = "Spanish [es]", tag = "es" },
+   { title = "Swahili [sw]", tag = "sw" },
+   { title = "Swedish [sv]", tag = "sv" },
+   { title = "Tagalog [tl]", tag = "tl" },
+   { title = "Telugu [te]", tag = "te" },
+   { title = "Thai [th]", tag = "th" },
+   { title = "Turkish [tr]", tag = "tr" },
+   { title = "Ukrainian [uk]", tag = "uk" },
+   { title = "Urdu [ur]", tag = "ur" },
+   { title = "Vietnamese [vi]", tag = "vi" }
 }
 
