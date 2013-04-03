@@ -10,6 +10,7 @@
   - ale5000 (Based on the script made by Jean-Philippe André)
  Contributors:
   - Mederi (updated languages, plugin refactor)
+  - Abraham van Helpsing (Linux fixes)
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
