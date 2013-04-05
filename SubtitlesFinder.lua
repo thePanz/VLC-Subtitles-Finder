@@ -736,7 +736,7 @@ languages = {
    { title = "Hungarian [hu]", tag = "hu" },
    { title = "Icelandic [is]", tag = "is" },
    { title = "Indonesian [id]", tag = "id" },
-   { title = "Italina [it]", tag = "it" },
+   { title = "Italian [it]", tag = "it" },
    { title = "Japanese [ja]", tag = "ja" },
    { title = "Kazakh [kk]", tag = "kk" },
    { title = "Khmer [km]", tag = "km" },
