@@ -2,8 +2,6 @@
  Subtitles
 
  Copyright © 2009-2010 VideoLAN and AUTHORS
- 
- Version: 1.2 [2013-03-03]
 
  Authors:
   - thePanz (Download-and-save feature, updates, installer script)
@@ -26,6 +24,8 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 --]]
+_SUBTITLES_FINDER_VERSION = "1.3-beta [2013-04-05]"
+_SUBTITLES_FINDER_AUTHORS = "thePanz, Mederi, Ale5000"
 
 dlg = nil
 
@@ -47,8 +47,8 @@ type_text_input = nil
 function descriptor()
 	return {
 				title = "Subtitles Finder";
-				version = "1.1.0";
-				author = "thePanz, ale5000";
+				version = _SUBTITLES_FINDER_VERSION;
+				author = _SUBTITLES_FINDER_AUTHORS;
 				url = 'http://thepanz.netsons.org/post/vlc-and-opensubtitles-downloader';
 				description = ""
 						   .. "Find and get subtitles of movies from the internet."
@@ -72,8 +72,8 @@ end
 
 -- Function triggered when the extension is activated
 function activate()
-	vlc.msg.dbg(_VERSION)
 	vlc.msg.dbg("[Subtitles] Activating")
+    trigger_menu(1)
 	return true
 end
 
